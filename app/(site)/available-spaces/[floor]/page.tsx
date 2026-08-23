@@ -13,8 +13,8 @@ import {
   floors,
   isFloorSlug,
   secondFloorConcepts,
-  unitsByFloor,
 } from "@/lib/property";
+import { resolvedUnitsByFloor } from "@/lib/server/units";
 
 type Params = { params: Promise<{ floor: string }> };
 
@@ -40,6 +40,8 @@ const seo: Record<string, { title: string; description: string }> = {
   },
 };
 
+export const revalidate = 300;
+
 export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const { floor } = await params;
   if (!isFloorSlug(floor)) return {};
@@ -60,7 +62,7 @@ export default async function FloorPage({ params }: Params) {
   if (!isFloorSlug(slug)) notFound();
 
   const floor = floors[slug];
-  const units = unitsByFloor(slug);
+  const units = await resolvedUnitsByFloor(slug);
   const isSecond = slug === "second-floor";
 
   return (

@@ -7,7 +7,14 @@ import { StatusPill, cx } from "@/components/ui";
 import { UnitViewBeacon } from "@/components/lead-dialog";
 import { formatArea, unitHref, type Unit } from "@/lib/property";
 
-export function UnitCard({ unit, priority = false }: { unit: Unit; priority?: boolean }) {
+export function UnitCard({
+  unit,
+  priority = false,
+}: {
+  /** `promoLabel` is set by the leasing team in the CRM. */
+  unit: Unit & { promoLabel?: string | null };
+  priority?: boolean;
+}) {
   return (
     <article className="group flex flex-col overflow-hidden rounded-2xl border border-line bg-white transition-all duration-300 hover:-translate-y-1 hover:border-ink/15 hover:shadow-[0_30px_60px_-40px_rgba(11,11,11,0.5)]">
       <Link href={unitHref(unit)} className="relative block aspect-[4/3] overflow-hidden">
@@ -19,8 +26,13 @@ export function UnitCard({ unit, priority = false }: { unit: Unit; priority?: bo
           className="object-cover transition-transform duration-700 group-hover:scale-105"
           priority={priority}
         />
-        <div className="absolute top-3 left-3">
+        <div className="absolute top-3 left-3 flex flex-wrap items-center gap-2">
           <StatusPill status={unit.status} />
+          {unit.promoLabel ? (
+            <span className="rounded-full bg-ink/85 px-2.5 py-1 text-[0.7rem] font-medium text-white backdrop-blur">
+              {unit.promoLabel}
+            </span>
+          ) : null}
         </div>
         <div className="absolute right-3 bottom-3 rounded-full bg-ink/85 px-3 py-1 text-xs font-medium text-white backdrop-blur">
           {formatArea(unit.area)}

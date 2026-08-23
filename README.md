@@ -71,6 +71,67 @@ Protections on the endpoint: shared validation, a honeypot field, a fixed-window
 (6 submissions per 10 minutes per hashed IP), 500-character field caps, and duplicate-email
 flagging (flagged, never blocked — the same company enquiring twice is a signal, not an error).
 
+## The CRM
+
+Every enquiry, pricing request, unit enquiry, contact message and site-visit booking from the
+website arrives in the CRM at **`/crm`**. There is no separate inbox to watch.
+
+### Creating the first account
+
+Accounts are created from the command line so that nobody but you ever types the password:
+
+```bash
+npm run crm:user
+```
+
+It asks for a name, email and role, then the password twice (hidden). Passwords are stored as
+scrypt hashes with a per-user salt. Run it again with the same email to reset a password or
+change a role. Create at least one **Super Administrator**, then sign in at `/crm/login`.
+
+### Roles
+
+| Role | Can do |
+| --- | --- |
+| Super Administrator | Everything, including user management |
+| Leasing Manager | Edit and assign leads, manage units, view reports, export |
+| Leasing Agent | Edit leads and add notes; cannot reassign or export |
+| Marketing Manager | View leads and reports, export CSV |
+| Viewer | Read-only leads and reports |
+
+Permissions live in one table in `lib/server/auth.ts` — changing what a role can do is one edit.
+
+### Screens
+
+- **Dashboard** — the twelve pipeline counters from the brief, latest enquiries, follow-ups due
+  today, units attracting multiple enquiries, duplicate-email detection and an activity feed.
+- **Leads** — search by name, company, email, phone or reference; filter by status, unit,
+  category, source, assigned agent and date range; "follow-up due only"; paginated; CSV export.
+- **Lead detail** — the full enquiry with campaign attribution, one-tap call/WhatsApp/email using
+  the lead's own number, the 14-stage pipeline, agent assignment, follow-up date, outcome,
+  internal notes and site-visit history with its own status.
+- **Units** — availability status, promotional label, display order and an internal rent note per
+  unit, alongside the enquiry count for each. Saving updates the public site.
+- **Reports** — conversion rate, unit demand, enquiry source, business category and monthly
+  performance.
+
+### Security
+
+Sessions are stateless signed cookies (HttpOnly, SameSite=Lax, Secure in production, 8-hour
+expiry) keyed on `CRM_SESSION_SECRET`. The user row is re-read on every request, so deactivating
+an account takes effect immediately. Failed logins are throttled to 8 per 15 minutes per
+IP-and-email and are recorded; sign-in never reveals whether an address exists. Every mutation is
+written to `activity_log`. All lead queries are parameterised, and CSV export escapes values that
+would otherwise be interpreted as spreadsheet formulas.
+
+`/crm` is disallowed in `robots.txt` and carries `noindex` regardless.
+
+### Unit availability and the public site
+
+`lib/server/units.ts` merges CRM overrides onto the inventory in `lib/property.ts`. The public
+read is cached for five minutes so unit pages stay statically rendered, and saving a unit calls
+`revalidatePath`, so a status change is visible straight away rather than in five minutes. If D1
+is unreachable, the published defaults are served rather than an error.
+
 ## Where content lives
 
 Almost everything the leasing team will want to change sits in two files:
@@ -117,6 +178,9 @@ The site runs on placeholders for these. Search `lib/property.ts` for `PLACEHOLD
 - [ ] **Company registration details** for the privacy policy and terms, reviewed by the
       landlord's legal adviser
 - [ ] **Rotate the Cloudflare API token** — it was shared in chat during setup
+- [ ] **Create the real CRM accounts** with `npm run crm:user` (the database ships empty)
+- [ ] **Set `CRM_SESSION_SECRET`** in the production environment — it is generated per install
+      and is already in your local `.env.local`
 
 ### One naming decision outstanding
 
@@ -127,11 +191,13 @@ having the logo and the H1 disagree is the kind of thing a tenant notices.
 
 ## Not built yet
 
-This release is the public site. Deliberately out of scope for now, per the agreed plan:
-
-- CRM dashboard, login and role-based access (the lead database underneath it is live and
-  already collecting, so nothing is lost in the meantime)
-- Email/SMS/WhatsApp notification on new enquiry
-- CSV export and monthly reports
-- Per-unit floor-plan extracts — units link to a "request a floor plan" enquiry instead of
-  showing a plan, because no floor-plan images were supplied
+- **Outbound notifications.** New enquiries appear in the CRM immediately, but nothing emails or
+  texts the leasing team yet — that needs a mail provider (Resend, SendGrid, Cloudflare Email)
+  and the confirmed leasing address. The same applies to the automated reminders in the brief
+  (follow-up due, proposal not chased, reserved unit changed).
+- **Scheduled monthly report delivery.** The reports screen is live; emailing it on a schedule
+  needs the mail provider above.
+- **User management screen.** Accounts are created and updated with `npm run crm:user`. A
+  Super Administrator UI for this is straightforward to add if you want it.
+- **Per-unit floor-plan extracts.** Units link to a "request a floor plan" enquiry rather than
+  showing a plan, because no floor-plan images were supplied.

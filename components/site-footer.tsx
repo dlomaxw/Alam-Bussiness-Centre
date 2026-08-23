@@ -36,6 +36,7 @@ const companyLinks = [
   { href: "/contact", label: "Contact the leasing team" },
   { href: "/privacy-policy", label: "Privacy policy" },
   { href: "/terms", label: "Terms and conditions" },
+  { href: "/crm/login", label: "CRM login" },
 ];
 
 export function SiteFooter() {

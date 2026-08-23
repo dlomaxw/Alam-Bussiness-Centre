@@ -19,6 +19,7 @@ import {
   property,
   secondFloorConcepts,
 } from "@/lib/property";
+import { resolvedUnits } from "@/lib/server/units";
 
 const introPoints = [
   "77.1-metre glazed frontage to Fifth Street",
@@ -70,7 +71,11 @@ const homeFaqs = [
   },
 ];
 
-export default function HomePage() {
+export const revalidate = 300;
+
+export default async function HomePage() {
+  const units = await resolvedUnits();
+
   return (
     <>
       {/* Hero */}
@@ -200,7 +205,7 @@ export default function HomePage() {
             intro="Filter by floor, size and intended use. Every unit can be leased on its own, paired with the unit next door, or taken as part of a full floor."
           />
           <div className="mt-10">
-            <UnitCatalogue />
+            <UnitCatalogue units={units} />
           </div>
         </div>
       </section>

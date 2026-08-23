@@ -7,6 +7,7 @@ import { UnitCatalogue } from "@/components/unit-catalogue";
 import { SectionHeading } from "@/components/ui";
 import { JsonLd, itemListSchema } from "@/lib/schema";
 import { buildingStats } from "@/lib/property";
+import { resolvedUnits } from "@/lib/server/units";
 
 export const metadata: Metadata = {
   title: "Available Commercial Units for Rent | 570-660 m² Showroom & Office Space",
@@ -15,7 +16,11 @@ export const metadata: Metadata = {
   alternates: { canonical: "/available-spaces" },
 };
 
-export default function AvailableSpacesPage() {
+export const revalidate = 300;
+
+export default async function AvailableSpacesPage() {
+  const units = await resolvedUnits();
+
   return (
     <>
       <section className="bg-ink text-white">
@@ -45,7 +50,7 @@ export default function AvailableSpacesPage() {
 
       <section className="bg-paper">
         <div className="container-x py-16 lg:py-24">
-          <UnitCatalogue />
+          <UnitCatalogue units={units} />
         </div>
       </section>
 

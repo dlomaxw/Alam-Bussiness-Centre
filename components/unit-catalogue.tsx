@@ -10,7 +10,6 @@ import { track } from "@/lib/analytics";
 import {
   businessCategories,
   floors,
-  units,
   type BusinessCategory,
   type FloorSlug,
   type Unit,
@@ -44,7 +43,14 @@ const combinations: {
 const chip =
   "inline-flex min-h-10 items-center rounded-full border px-4 py-2 text-sm transition-colors";
 
-export function UnitCatalogue({ initialFloor }: { initialFloor?: FloorSlug }) {
+export function UnitCatalogue({
+  units,
+  initialFloor,
+}: {
+  /** Resolved on the server so CRM availability changes are reflected here. */
+  units: Unit[];
+  initialFloor?: FloorSlug;
+}) {
   const [floor, setFloor] = useState<FloorSlug | "all">(initialFloor ?? "all");
   const [size, setSize] = useState<SizeBand>("all");
   const [category, setCategory] = useState<BusinessCategory | "all">("all");
@@ -60,7 +66,7 @@ export function UnitCatalogue({ initialFloor }: { initialFloor?: FloorSlug }) {
       if (availableOnly && unit.status !== "Available") return false;
       return true;
     });
-  }, [floor, size, category, availableOnly]);
+  }, [units, floor, size, category, availableOnly]);
 
   const visibleCombinations = combinations.filter(
     (combo) => floor === "all" || combo.floor === floor,

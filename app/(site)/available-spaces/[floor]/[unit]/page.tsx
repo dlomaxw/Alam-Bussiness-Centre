@@ -17,12 +17,21 @@ import { UnitCard } from "@/components/unit-card";
 import { UnitViewBeacon } from "@/components/lead-dialog";
 import { ButtonLink, SectionHeading, StatusPill } from "@/components/ui";
 import { JsonLd, unitListingSchema } from "@/lib/schema";
-import { floors, formatArea, getUnit, property, units } from "@/lib/property";
+import {
+  floors,
+  formatArea,
+  getUnit,
+  property,
+  units as staticUnits,
+} from "@/lib/property";
+import { resolvedUnit, resolvedUnits } from "@/lib/server/units";
 
 type Params = { params: Promise<{ floor: string; unit: string }> };
 
+export const revalidate = 300;
+
 export function generateStaticParams() {
-  return units.map((unit) => ({ floor: unit.floor, unit: unit.slug }));
+  return staticUnits.map((unit) => ({ floor: unit.floor, unit: unit.slug }));
 }
 
 export async function generateMetadata({ params }: Params): Promise<Metadata> {
@@ -46,11 +55,13 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
 
 export default async function UnitPage({ params }: Params) {
   const { floor: floorSlug, unit: slug } = await params;
-  const unit = getUnit(floorSlug, slug);
+  const unit = await resolvedUnit(floorSlug, slug);
   if (!unit) notFound();
 
+  const all = await resolvedUnits();
+
   const floor = floors[unit.floor];
-  const related = units.filter((item) => item.slug !== unit.slug).slice(0, 3);
+  const related = all.filter((item) => item.slug !== unit.slug).slice(0, 3);
   const whatsapp = unitWhatsappMessage(unit.name, unit.floorName, unit.area);
 
   const specifications = [

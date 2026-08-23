@@ -22,6 +22,11 @@ interface D1Response<T> {
 export async function d1Query<T = Record<string, unknown>>(
   sql: string,
   params: (string | number | null)[] = [],
+  /**
+   * Reads that feed public pages pass a revalidate window so those pages stay
+   * statically rendered. CRM reads omit it and are never cached.
+   */
+  options: { revalidate?: number } = {},
 ): Promise<T[]> {
   if (!d1Configured) {
     throw new Error(
@@ -38,7 +43,9 @@ export async function d1Query<T = Record<string, unknown>>(
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ sql, params }),
-      cache: "no-store",
+      ...(options.revalidate === undefined
+        ? { cache: "no-store" as const }
+        : { next: { revalidate: options.revalidate } }),
     },
   );
 
