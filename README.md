@@ -20,7 +20,7 @@ Cloudflare credentials — without those, enquiries are logged to the console in
 being saved, and the site still runs.
 
 ```bash
-npm run build   # production build, prerenders 37 pages
+npm run build   # production build, prerenders 38 pages
 npm start       # serve the production build
 ```
 
@@ -60,8 +60,12 @@ Workers binding, so the same build deploys to Vercel, Node or Cloudflare.
 | `site_visits` | Viewing requests linked to a lead |
 | `lead_notes` | Internal follow-up notes |
 | `lead_events` | Capture and duplicate-enquiry events |
+| `users` | CRM accounts: role, scrypt password hash and salt, active flag |
+| `activity_log` | Who changed what in the CRM, and when |
+| `unit_overrides` | Availability, promo label, display order and rent note set by the leasing team |
 
-Schema lives in `db/schema.sql`. To inspect leads before the CRM dashboard is built:
+Schema lives in `db/schema.sql` and `db/002-crm.sql`. Day to day you read this through the CRM,
+but to query it directly:
 
 ```bash
 npx wrangler d1 execute alam-business-centre-crm --remote --command "SELECT reference, created_at, full_name, company, email, phone, source, status FROM leads ORDER BY created_at DESC LIMIT 20"
