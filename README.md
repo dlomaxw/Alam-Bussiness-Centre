@@ -164,6 +164,51 @@ single call out to whichever are configured, covering all thirteen events in the
 phone/email/WhatsApp clicked, map opened, floor plan viewed, comparison completed, form
 abandoned, lead captured).
 
+## Deploying to Vercel
+
+1. Import the repository in Vercel. Framework preset is detected as Next.js; no build
+   overrides are needed.
+2. Add these environment variables under **Settings → Environment Variables** for
+   Production (and Preview, if you want previews to capture leads). Values are in your local
+   `.env.local`.
+
+   | Variable | Notes |
+   | --- | --- |
+   | `CLOUDFLARE_ACCOUNT_ID` | Lead database |
+   | `CLOUDFLARE_D1_DATABASE_ID` | Lead database |
+   | `CLOUDFLARE_API_TOKEN` | Secret. Rotate the one shared during setup. |
+   | `CRM_SESSION_SECRET` | Secret, 32+ random chars. Generate a fresh one for production. |
+   | `LEASE_RATE_USD_PER_SQM_MONTH` | `15` |
+   | `NEXT_PUBLIC_SITE_URL` | Your real domain, no trailing slash |
+   | `NEXT_PUBLIC_LEASING_PHONE` | e.g. `+256700000000` |
+   | `NEXT_PUBLIC_LEASING_PHONE_DISPLAY` | e.g. `+256 700 000 000` |
+   | `NEXT_PUBLIC_WHATSAPP_NUMBER` | Digits only, no `+` |
+   | `NEXT_PUBLIC_LEASING_EMAIL` | Leasing inbox |
+   | `NEXT_PUBLIC_GA4_ID` etc. | Optional; blank disables the tag |
+
+   Generate a production session secret with:
+
+   ```bash
+   node -e "console.log(require('crypto').randomBytes(48).toString('base64url'))"
+   ```
+
+3. Deploy, then create your CRM accounts. Run this locally against the same database —
+   it writes only a scrypt hash, and you type the password yourself:
+
+   ```bash
+   npm run crm:user
+   ```
+
+4. Sign in at `https://your-domain/crm/login`.
+
+Two notes for production:
+
+- `NEXT_PUBLIC_SITE_URL` drives canonicals, the sitemap and Open Graph tags. If it is wrong,
+  Google indexes the wrong URLs — set it before submitting the sitemap.
+- The form rate limiter counts in memory, which on serverless means per instance rather than
+  globally. It still stops casual form hammering; move the counter into D1 or KV if you need a
+  hard global limit.
+
 ---
 
 ## Before launch — must be confirmed
