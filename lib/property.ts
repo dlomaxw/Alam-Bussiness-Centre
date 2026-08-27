@@ -26,7 +26,11 @@ export const property = {
   whatsapp: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "256700000000",
   email: process.env.NEXT_PUBLIC_LEASING_EMAIL ?? "leasing@alambusinesscentre.com",
   viewingHours: "Monday to Friday, 9:00am to 5:00pm. Saturday, 9:00am to 1:00pm.",
-  presentation: "/downloads/alam-business-centre-property-presentation.pdf",
+  // Hosted on Drive rather than bundled: the deck is ~43 MB, which would bloat
+  // the repository and make the deploy slow to download on a mobile connection.
+  presentation:
+    process.env.NEXT_PUBLIC_PRESENTATION_URL ??
+    "https://drive.google.com/file/d/1wQLz51w-6LDWrVfRK0J-Eu3EKL4n3QET/view?usp=sharing",
 } as const;
 
 export const buildingStats = [

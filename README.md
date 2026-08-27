@@ -148,6 +148,11 @@ Almost everything the leasing team will want to change sits in two files:
 
 ## Images
 
+The property presentation is **not** bundled in this repository. At ~43 MB it would bloat every
+clone and deploy, so the "Download Property Presentation" buttons link to the hosted copy on
+Google Drive instead. The URL lives in `lib/property.ts` and can be overridden per environment
+with `NEXT_PUBLIC_PRESENTATION_URL` — point that at a new link if the deck is ever replaced.
+
 23 renders were converted from 57 MB of PNGs to 4.2 MB of WebP by `scripts/prepare-images.mjs`,
 and the logo variants by `scripts/prepare-logo.mjs` (transparent background, plus a white
 knockout of the wordmark for the black header). Re-run either if the source assets change.

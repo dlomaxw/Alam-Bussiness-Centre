@@ -111,7 +111,8 @@ export function BrochureLink({
   return (
     <a
       href={property.presentation}
-      download
+      target="_blank"
+      rel="noopener noreferrer"
       className={cx(
         variant
           ? "inline-flex min-h-12 items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium tracking-wide transition-all duration-200"
