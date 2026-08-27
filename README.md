@@ -184,7 +184,7 @@ abandoned, lead captured).
    | `CLOUDFLARE_API_TOKEN` | Secret. Rotate the one shared during setup. |
    | `CRM_SESSION_SECRET` | Secret, 32+ random chars. Generate a fresh one for production. |
    | `LEASE_RATE_USD_PER_SQM_MONTH` | `15` |
-   | `NEXT_PUBLIC_SITE_URL` | Your real domain, no trailing slash |
+   | `NEXT_PUBLIC_SITE_URL` | `https://www.alambusinesscentre.com` — note the domain is spelled *centre* while the brand is *Center*. Leave it unset and the code uses this same value. |
    | `NEXT_PUBLIC_LEASING_PHONE` | e.g. `+256700000000` |
    | `NEXT_PUBLIC_LEASING_PHONE_DISPLAY` | e.g. `+256 700 000 000` |
    | `NEXT_PUBLIC_WHATSAPP_NUMBER` | Digits only, no `+` |
@@ -223,7 +223,7 @@ The site runs on placeholders for these. Search `lib/property.ts` for `PLACEHOLD
 - [x] **Leasing phone number** — `+256 750 421224`
 - [x] **WhatsApp number** — `256750421224`
 - [x] **Leasing email** — `brightthoughtsservices@gmail.com`
-- [ ] **Domain** — `NEXT_PUBLIC_SITE_URL` drives canonicals, sitemap and Open Graph
+- [x] **Domain** — `https://www.alambusinesscentre.com`, live on Vercel
 - [ ] **Map coordinates** — `latitude`/`longitude` are approximate for Industrial Area;
       the embed searches by address, so a wrong pin is possible until these are set
 - [ ] **Site-visit operating hours** — currently Mon–Fri 9–5, Sat 9–1

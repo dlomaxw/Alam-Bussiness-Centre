@@ -5,9 +5,19 @@
  * Values marked PLACEHOLDER must be confirmed before launch - see README.
  */
 
+/**
+ * Canonical origin for canonicals, Open Graph tags, the sitemap and robots.txt.
+ *
+ * The domain is spelled "centre" even though the brand is "Center" - that is
+ * the registered domain. An empty environment variable falls back to it rather
+ * than through, because `new URL("")` throws and would fail the build.
+ */
+const configuredSiteUrl = process.env.NEXT_PUBLIC_SITE_URL?.trim().replace(/\/$/, "");
+
 export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ??
-  "https://www.alambusinesscenter.com";
+  configuredSiteUrl && configuredSiteUrl.length > 0
+    ? configuredSiteUrl
+    : "https://www.alambusinesscentre.com";
 
 export const property = {
   name: "Alam Business Center",

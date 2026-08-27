@@ -44,3 +44,5 @@ next-env.d.ts
 # local dev logs
 dev.log
 qa-temp-pw.txt
+
+.vercel
