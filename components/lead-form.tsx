@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 
 import { track, attribution } from "@/lib/analytics";
+import { rememberLead } from "@/lib/whatsapp-client";
 import { usePricing } from "@/components/pricing-context";
 import { Button, cx } from "@/components/ui";
 import {
@@ -202,6 +203,9 @@ export function LeadForm({
       }
 
       unlock(result.pricing);
+      // Ties any later WhatsApp tap-through to this lead rather than logging
+      // it as an anonymous click.
+      rememberLead(result.id);
       setReference(result.reference ?? null);
       setStatus("done");
       track("register_interest_submitted", { source });

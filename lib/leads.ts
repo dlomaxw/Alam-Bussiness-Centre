@@ -12,6 +12,7 @@ export const leadSources = [
   "Pricing Request",
   "Contact Form",
   "Brochure Download",
+  "WhatsApp",
 ] as const;
 
 export type LeadSource = (typeof leadSources)[number];

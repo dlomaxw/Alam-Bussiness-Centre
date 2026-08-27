@@ -96,6 +96,7 @@ export async function POST(request: Request) {
     // The gate: commercial terms are released only once a valid lead exists.
     return NextResponse.json({
       ok: true,
+      id: lead.id,
       reference: lead.reference,
       duplicate: lead.duplicate,
       pricing: buildPricing(),

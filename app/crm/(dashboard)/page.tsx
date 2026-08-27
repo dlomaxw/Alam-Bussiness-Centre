@@ -9,6 +9,7 @@ import {
   recentActivity,
   unitsWithMultipleEnquiries,
 } from "@/lib/server/crm";
+import { whatsAppSummary } from "@/lib/server/whatsapp";
 import { units } from "@/lib/property";
 
 export const dynamic = "force-dynamic";
@@ -31,8 +32,9 @@ function when(iso: string) {
 export default async function DashboardPage() {
   await requireUser();
 
-  const [summary, latest, followUps, duplicates, hotUnits, activity] = await Promise.all([
+  const [summary, whatsapp, latest, followUps, duplicates, hotUnits, activity] = await Promise.all([
     dashboardSummary(),
+    whatsAppSummary(),
     listLeads({}, 8),
     listLeads({ followUpDue: true }, 6),
     duplicateEnquiries(),
@@ -52,6 +54,8 @@ export default async function DashboardPage() {
     { label: "Converted tenants", value: summary.converted ?? 0, href: "/crm/leads?status=Converted" },
     { label: "Lost", value: summary.lost ?? 0, href: "/crm/leads?status=Lost" },
     { label: "Follow-up due", value: summary.follow_up_due ?? 0, href: "/crm/leads?followUp=1", accent: true },
+    { label: "WhatsApp enquiries", value: whatsapp.total ?? 0, href: "/crm/whatsapp" },
+    { label: "WhatsApp unhandled", value: whatsapp.unhandled ?? 0, href: "/crm/whatsapp", accent: true },
     { label: "Uncontacted 24h+", value: summary.uncontacted_24h ?? 0, href: "/crm/leads?status=New", accent: true },
   ];
 

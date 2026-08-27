@@ -18,6 +18,7 @@ import {
   type Role,
 } from "@/lib/server/auth";
 import { addNote, saveUnitOverride, setVisitStatus, updateLead } from "@/lib/server/crm";
+import { setWhatsAppStatus } from "@/lib/server/whatsapp";
 
 export interface FormState {
   error?: string;
@@ -177,4 +178,14 @@ export async function saveUnit(_prev: FormState, formData: FormData): Promise<Fo
   revalidatePath("/", "layout");
 
   return { message: "Unit updated. The public site now shows the new status." };
+}
+
+export async function markWhatsAppHandled(formData: FormData) {
+  const user = await requirePermission("editLeads");
+  const id = String(formData.get("id"));
+
+  await setWhatsAppStatus(id, "Handled");
+  await logActivity(user, "whatsapp_handled", "whatsapp_enquiry", id);
+  revalidatePath("/crm/whatsapp");
+  revalidatePath("/crm");
 }

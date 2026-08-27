@@ -15,6 +15,7 @@ export default async function DashboardLayout({
   const links = [
     { href: "/crm", label: "Dashboard", show: true },
     { href: "/crm/leads", label: "Leads", show: true },
+    { href: "/crm/whatsapp", label: "WhatsApp", show: true },
     { href: "/crm/units", label: "Units", show: can(user, "manageUnits") },
     { href: "/crm/reports", label: "Reports", show: can(user, "viewReports") },
   ].filter((link) => link.show);

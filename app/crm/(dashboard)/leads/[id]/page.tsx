@@ -6,6 +6,7 @@ import { updateVisitStatus } from "@/app/crm/actions";
 import { StatusPill } from "@/components/ui";
 import { can, requireUser } from "@/lib/server/auth";
 import { agents, getLead, getLeadNotes, getLeadVisits } from "@/lib/server/crm";
+import { whatsAppEnquiriesForLead } from "@/lib/server/whatsapp";
 import { floors, units } from "@/lib/property";
 import { whatsappHref } from "@/lib/whatsapp";
 
@@ -34,10 +35,11 @@ export default async function LeadDetailPage({
   const lead = await getLead(id);
   if (!lead) notFound();
 
-  const [notes, visits, agentList] = await Promise.all([
+  const [notes, visits, agentList, whatsapp] = await Promise.all([
     getLeadNotes(id),
     getLeadVisits(id),
     agents(),
+    whatsAppEnquiriesForLead(id),
   ]);
 
   const editable = can(user, "editLeads");
@@ -186,6 +188,47 @@ export default async function LeadDetailPage({
                         {visit.message}
                       </p>
                     ) : null}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </section>
+
+          <section className="rounded-2xl border border-line bg-white">
+            <header className="border-b border-line px-5 py-4">
+              <h2 className="font-display text-xl text-ink">WhatsApp</h2>
+            </header>
+            {whatsapp.length === 0 ? (
+              <p className="px-5 py-8 text-sm text-ink/55">
+                No WhatsApp activity recorded for this lead.
+              </p>
+            ) : (
+              <ul className="divide-y divide-line">
+                {whatsapp.map((entry) => (
+                  <li key={entry.id} className="px-5 py-3.5">
+                    <div className="flex flex-wrap items-center gap-2">
+                      <span
+                        className={
+                          entry.direction === "message"
+                            ? "rounded-full bg-red px-2.5 py-1 text-[0.7rem] font-medium text-white"
+                            : "rounded-full bg-ink/8 px-2.5 py-1 text-[0.7rem] font-medium text-ink/70"
+                        }
+                      >
+                        {entry.direction === "message" ? "Message received" : "Tapped through"}
+                      </span>
+                      <span className="text-xs text-ink/45">
+                        {new Date(entry.created_at).toLocaleString("en-GB")}
+                      </span>
+                    </div>
+                    {entry.message ? (
+                      <p className="mt-2 text-sm leading-relaxed whitespace-pre-wrap text-ink/75">
+                        {entry.message}
+                      </p>
+                    ) : null}
+                    <p className="mt-1 text-xs text-ink/45">
+                      {entry.unit_slug ? `${unitLabel(entry.unit_slug)} · ` : ""}
+                      {entry.page_path ?? ""}
+                    </p>
                   </li>
                 ))}
               </ul>

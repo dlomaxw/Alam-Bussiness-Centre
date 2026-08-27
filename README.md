@@ -136,6 +136,43 @@ read is cached for five minutes so unit pages stay statically rendered, and savi
 `revalidatePath`, so a status change is visible straight away rather than in five minutes. If D1
 is unreachable, the published defaults are served rather than an error.
 
+## WhatsApp enquiries
+
+WhatsApp enquiries reach the CRM two ways, and they are not equivalent.
+
+**Tap-throughs (working now, no setup).** Every "Enquire on WhatsApp" button records the
+click before the browser leaves — the unit, the page, the placement and the campaign, sent
+with `navigator.sendBeacon` so the request survives the navigation without delaying it. If the
+visitor has already submitted a form, the click is attached to their existing lead.
+
+What this **cannot** do is see the conversation: the visitor's name and message live inside
+WhatsApp. So a tap-through tells the leasing team *someone was looking at Unit 3 at 14:32 and
+opened WhatsApp*, which is enough to match against the message arriving on the phone.
+
+**Inbound messages (needs Meta setup).** With the WhatsApp Cloud API connected, real messages
+create real leads: sender number, profile name and message text, deduplicated against Meta's
+webhook retries, and matched to an existing lead when the number is already known.
+
+To connect it:
+
+1. In Meta Business, create an app with the WhatsApp product and add your business number.
+2. Set two environment variables in Vercel:
+   - `WHATSAPP_VERIFY_TOKEN` — any random string you choose
+   - `WHATSAPP_APP_SECRET` — the Meta app secret, used to verify Meta signed each request
+3. In the app's WhatsApp → Configuration → Webhook, set the callback URL to
+   `https://www.alambusinesscentre.com/api/whatsapp/webhook`, paste the same verify token, and
+   subscribe to the **messages** field.
+4. Send a WhatsApp message to the business number; it appears under **CRM → WhatsApp** and as a
+   lead within seconds.
+
+Until those two variables are set the webhook returns 503 and stays inert, so it is safe to
+deploy before the Meta side exists. Both endpoints reject unsigned or mis-signed requests.
+
+**One thing to weigh before connecting:** a number moved onto the WhatsApp Cloud API can no
+longer be used in the ordinary WhatsApp or WhatsApp Business app on a phone. If the leasing
+team replies from their handset today, connecting the API changes how they work. A common
+answer is a second number for the website.
+
 ## Where content lives
 
 Almost everything the leasing team will want to change sits in two files:

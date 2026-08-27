@@ -6,6 +6,7 @@ import { track } from "@/lib/analytics";
 import { property } from "@/lib/property";
 import type { LeadSource } from "@/lib/leads";
 import { GENERAL_WHATSAPP_MESSAGE, whatsappHref } from "@/lib/whatsapp";
+import { notifyWhatsAppClick } from "@/lib/whatsapp-client";
 
 export function RegisterInterestButton({
   variant = "primary",
@@ -43,11 +44,15 @@ export function WhatsAppLink({
   className,
   children,
   unit,
+  floor,
+  placement,
 }: {
   message: string;
   className?: string;
   children: React.ReactNode;
   unit?: string;
+  floor?: string;
+  placement?: string;
 }) {
   return (
     <a
@@ -55,7 +60,9 @@ export function WhatsAppLink({
       target="_blank"
       rel="noopener noreferrer"
       className={className}
-      onClick={() => track("whatsapp_clicked", { unit })}
+      onClick={() =>
+        notifyWhatsAppClick({ unitSlug: unit, floor, placement: placement ?? "link" })
+      }
     >
       {children}
     </a>
@@ -137,7 +144,7 @@ export function FloatingWhatsApp() {
       href={whatsappHref(GENERAL_WHATSAPP_MESSAGE)}
       target="_blank"
       rel="noopener noreferrer"
-      onClick={() => track("whatsapp_clicked", { placement: "floating" })}
+      onClick={() => notifyWhatsAppClick({ placement: "floating" })}
       aria-label="Enquire on WhatsApp"
       className="fixed right-4 bottom-20 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25d366] text-white shadow-[0_12px_30px_-8px_rgba(0,0,0,0.45)] transition-transform duration-200 hover:scale-105 lg:bottom-6"
     >
@@ -173,7 +180,7 @@ export function MobileActionBar() {
         href={whatsappHref(GENERAL_WHATSAPP_MESSAGE)}
         target="_blank"
         rel="noopener noreferrer"
-        onClick={() => track("whatsapp_clicked", { placement: "mobile_bar" })}
+        onClick={() => notifyWhatsAppClick({ placement: "mobile_bar" })}
         className="flex min-h-14 flex-col items-center justify-center gap-0.5 border-x border-line text-[0.7rem] font-medium text-ink"
       >
         <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor" aria-hidden>
