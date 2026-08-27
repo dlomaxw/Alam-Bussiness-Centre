@@ -9,7 +9,7 @@ import { property } from "@/lib/property";
 export const metadata: Metadata = {
   title: "Book a Site Visit | View Commercial Space on Fifth Street, Kampala",
   description:
-    "Arrange a viewing of the available showroom, retail and office units at Alam Business Centre, Fifth Street, Industrial Area, Kampala. Choose a date and the leasing team will confirm.",
+    "Arrange a viewing of the available showroom, retail and office units at Alam Business Center, Fifth Street, Industrial Area, Kampala. Choose a date and the leasing team will confirm.",
   alternates: { canonical: "/book-a-site-visit" },
 };
 
@@ -71,7 +71,7 @@ export default function BookSiteVisitPage() {
               <div className="relative mt-8 aspect-3/2 overflow-hidden rounded-2xl">
                 <Image
                   src="/images/exterior-corner-entrance.webp"
-                  alt="The controlled vehicle entrance and guardhouse at Alam Business Centre"
+                  alt="The controlled vehicle entrance and guardhouse at Alam Business Center"
                   fill
                   sizes="(max-width: 1024px) 100vw, 45vw"
                   className="object-cover"

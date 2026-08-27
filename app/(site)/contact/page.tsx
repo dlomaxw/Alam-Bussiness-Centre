@@ -13,9 +13,9 @@ import { SectionHeading } from "@/components/ui";
 import { property } from "@/lib/property";
 
 export const metadata: Metadata = {
-  title: "Contact the Leasing Team | Alam Business Centre, Kampala",
+  title: "Contact the Leasing Team, Fifth Street Kampala",
   description:
-    "Speak to the leasing team at Alam Business Centre, Plot 86-90 Fifth Street, Industrial Area, Kampala. Call, email or message on WhatsApp for availability and lease terms.",
+    "Speak to the leasing team at Alam Business Center, Plot 86-90 Fifth Street, Industrial Area, Kampala. Call, email or message on WhatsApp for availability and lease terms.",
   alternates: { canonical: "/contact" },
 };
 
@@ -59,7 +59,7 @@ export default function ContactPage() {
 
                 <ContactCard label="Email">
                   <EmailLink
-                    subject="Leasing enquiry - Alam Business Centre"
+                    subject="Leasing enquiry - Alam Business Center"
                     className="font-display text-2xl break-words text-ink hover:text-red"
                   >
                     {property.email}

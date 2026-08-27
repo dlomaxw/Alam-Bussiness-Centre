@@ -27,7 +27,7 @@ export default async function DashboardLayout({
             <Link href="/crm" className="flex items-center">
               <Image
                 src="/logo/alam-logo-light.png"
-                alt="Alam Business Centre"
+                alt="Alam Business Center"
                 width={172}
                 height={72}
                 priority

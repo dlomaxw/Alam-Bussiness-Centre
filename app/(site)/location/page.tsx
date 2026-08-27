@@ -10,17 +10,17 @@ import { property } from "@/lib/property";
 export const metadata: Metadata = {
   title: "Location & Access | Fifth Street, Industrial Area, Kampala",
   description:
-    "Alam Business Centre is at Plot 86-90, Fifth Street, Industrial Area, Central Division, Kampala - minutes from the CBD with direct access to the Jinja Road corridor.",
+    "Alam Business Center is at Plot 86-90, Fifth Street, Industrial Area, Central Division, Kampala - minutes from the CBD with direct access to the Jinja Road corridor.",
   alternates: { canonical: "/location" },
 };
 
 const connections = [
-  { place: "Kampala CBD", detail: "Direct access through Industrial Area to the city centre." },
+  { place: "Kampala CBD", detail: "Direct access through Industrial Area to the city center." },
   { place: "Jinja Road corridor", detail: "Connects the site to eastern Uganda and the regional freight route." },
   { place: "Nakawa", detail: "Adjacent commercial and industrial district." },
   { place: "Port Bell Road", detail: "Onward access towards Luzira and the lakeside industrial belt." },
   { place: "Entebbe Road", detail: "Route to Entebbe International Airport via the southern bypass." },
-  { place: "Kampala Northern Bypass", detail: "Avoids the city centre for goods vehicles." },
+  { place: "Kampala Northern Bypass", detail: "Avoids the city center for goods vehicles." },
 ];
 
 const access = [
@@ -118,7 +118,7 @@ export default function LocationPage() {
           <div className="relative aspect-21/9 overflow-hidden rounded-2xl">
             <Image
               src="/images/exterior-frontage-gatehouse.webp"
-              alt="The Alam Business Centre frontage and gatehouse seen from Fifth Street"
+              alt="The Alam Business Center frontage and gatehouse seen from Fifth Street"
               fill
               sizes="100vw"
               className="object-cover"

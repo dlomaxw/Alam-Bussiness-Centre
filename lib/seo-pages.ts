@@ -31,16 +31,16 @@ export const seoPages: SeoPage[] = [
     slug: "commercial-space-for-rent-in-kampala",
     title: "Commercial Space for Rent in Kampala | 570-660 m² Units, Industrial Area",
     description:
-      "Commercial space for rent in Kampala: eight units of 570-660 m² across 4,940 m² at Alam Business Centre, Fifth Street, Industrial Area, with 31 parking bays and 6 m headroom.",
+      "Commercial space for rent in Kampala: eight units of 570-660 m² across 4,940 m² at Alam Business Center, Fifth Street, Industrial Area, with 31 parking bays and 6 m headroom.",
     h1: "Commercial Space for Rent in Kampala",
     eyebrow: "Kampala, Uganda",
     intro: [
-      "Commercial space in Kampala usually forces a trade-off: visibility in the centre with no parking and no loading access, or space and access on the outskirts with no passing trade. Alam Business Centre on Fifth Street sits on the right side of both, in the Industrial Area that has been the city's commercial address for decades.",
+      "Commercial space in Kampala usually forces a trade-off: visibility in the center with no parking and no loading access, or space and access on the outskirts with no passing trade. Alam Business Center on Fifth Street sits on the right side of both, in the Industrial Area that has been the city's commercial address for decades.",
       "Phase One offers 4,940 m² of lettable area split into eight units of 570 to 660 m², behind approximately 77.1 metres of full-height glazed frontage, with 31 on-plot parking bays and separate vehicle entry and exit.",
     ],
     image: "/images/exterior-street-dusk.webp",
     imageAlt:
-      "Alam Business Centre, commercial space for rent on Fifth Street, Industrial Area, Kampala, lit at dusk",
+      "Alam Business Center, commercial space for rent on Fifth Street, Industrial Area, Kampala, lit at dusk",
     sections: [
       {
         heading: "What you get for the money in Industrial Area",
@@ -99,7 +99,7 @@ export const seoPages: SeoPage[] = [
     eyebrow: "Showrooms",
     intro: [
       "A showroom is a display instrument before it is a floor area. It needs height so products do not look cramped, glass so the street can see in, light that flatters what is on display, and a way to get stock through the door without closing the shop.",
-      "Alam Business Centre was designed around those four requirements, in the district where Kampala's trade buyers already come to compare suppliers.",
+      "Alam Business Center was designed around those four requirements, in the district where Kampala's trade buyers already come to compare suppliers.",
     ],
     image: "/images/interior-showroom-dusk.webp",
     imageAlt:
@@ -283,12 +283,12 @@ export const seoPages: SeoPage[] = [
     slug: "supermarket-space-for-rent",
     title: "Supermarket Space for Rent in Kampala | 625 m² Anchor Unit with Parking",
     description:
-      "Supermarket space for rent in Kampala: 625 m² ground-floor anchor unit at Alam Business Centre with trolley-level access, 31 parking bays and goods-lift servicing.",
+      "Supermarket space for rent in Kampala: 625 m² ground-floor anchor unit at Alam Business Center with trolley-level access, 31 parking bays and goods-lift servicing.",
     h1: "Supermarket Space for Rent in Kampala",
     eyebrow: "Grocery and convenience",
     intro: [
       "A supermarket is a logistics operation with a shopfront attached. The site has to work for a delivery truck at 6am, a trolley at 6pm, and a chiller run in between - and it has to have enough parking that a weekly shop is practical.",
-      "Unit 3 at 625 m² is positioned as the ground-floor anchor at Alam Business Centre, with level access from the forecourt and the building's parking directly in front of it.",
+      "Unit 3 at 625 m² is positioned as the ground-floor anchor at Alam Business Center, with level access from the forecourt and the building's parking directly in front of it.",
     ],
     image: "/images/unit-3-supermarket.webp",
     imageAlt:
@@ -346,12 +346,12 @@ export const seoPages: SeoPage[] = [
     slug: "corporate-office-space-for-rent",
     title: "Corporate Office Space for Rent in Kampala | 615-660 m² Daylit Floors",
     description:
-      "Corporate office space for rent in Kampala: 615-660 m² first-floor plates at Alam Business Centre with full-height glazing, porcelain finishes, lift access and secure parking.",
+      "Corporate office space for rent in Kampala: 615-660 m² first-floor plates at Alam Business Center with full-height glazing, porcelain finishes, lift access and secure parking.",
     h1: "Corporate Office Space for Rent in Kampala",
     eyebrow: "Offices",
     intro: [
       "Most office space in Kampala is either a converted floor in an older block or a small suite in a shared building. Neither reads well when a regional director or a client visits, and neither gives you a floor plate you can lay out from scratch.",
-      "The first floor at Alam Business Centre offers 615 to 660 m² plates with continuous daylight, a secure shared lobby and lift access - enough for a reception, open-plan desking, meeting suites and a boardroom in one tenancy.",
+      "The first floor at Alam Business Center offers 615 to 660 m² plates with continuous daylight, a secure shared lobby and lift access - enough for a reception, open-plan desking, meeting suites and a boardroom in one tenancy.",
     ],
     image: "/images/unit-8-offices.webp",
     imageAlt:
@@ -408,11 +408,11 @@ export const seoPages: SeoPage[] = [
     slug: "restaurant-space-for-rent",
     title: "Restaurant Space for Rent in Kampala | Second Floor with City Views",
     description:
-      "Restaurant and bar space for rent in Kampala on the second floor of Alam Business Centre, Fifth Street - panoramic glazing, servicing routes, parking and extended trading hours.",
+      "Restaurant and bar space for rent in Kampala on the second floor of Alam Business Center, Fifth Street - panoramic glazing, servicing routes, parking and extended trading hours.",
     h1: "Restaurant Space for Rent in Kampala",
     eyebrow: "Hospitality",
     intro: [
-      "A restaurant needs a view, a kitchen route and a car park - in that order of what customers notice and reverse order of what usually kills a site. The second floor at Alam Business Centre has all three.",
+      "A restaurant needs a view, a kitchen route and a car park - in that order of what customers notice and reverse order of what usually kills a site. The second floor at Alam Business Center has all three.",
       "Areas on the second floor are available on application and configured to the operator, so the kitchen, bar and cover count are planned around your concept rather than inherited from a previous tenant.",
     ],
     image: "/images/concept-restaurant.webp",
@@ -470,12 +470,12 @@ export const seoPages: SeoPage[] = [
     slug: "gym-and-wellness-space-for-rent",
     title: "Gym & Wellness Space for Rent in Kampala | Second-Floor Studio and Spa Space",
     description:
-      "Gym, spa, yoga and wellness space for rent in Kampala on the second floor of Alam Business Centre - column-light floors, wet-area provision, parking and city views.",
+      "Gym, spa, yoga and wellness space for rent in Kampala on the second floor of Alam Business Center - column-light floors, wet-area provision, parking and city views.",
     h1: "Gym and Wellness Space for Rent in Kampala",
     eyebrow: "Leisure and wellness",
     intro: [
       "Fitness and wellness operators need three things that are hard to find together in Kampala: a big column-light floor, drainage for wet areas, and parking that members will use at 6am and 8pm.",
-      "The second floor at Alam Business Centre carries all three, with the area configured to the operator rather than fixed in advance.",
+      "The second floor at Alam Business Center carries all three, with the area configured to the operator rather than fixed in advance.",
     ],
     image: "/images/concept-gym.webp",
     imageAlt:
@@ -537,11 +537,11 @@ export const seoPages: SeoPage[] = [
     eyebrow: "Large-format space",
     intro: [
       "Finding a genuinely large, contiguous commercial floor in Kampala is difficult. Most large requirements end up split across buildings or across floors of a block that was never designed for a single occupier.",
-      "Alam Business Centre is designed to consolidate. Adjacent units combine, full floors let as one, and the entire 4,940 m² of Phase One can go to a single tenant.",
+      "Alam Business Center is designed to consolidate. Adjacent units combine, full floors let as one, and the entire 4,940 m² of Phase One can go to a single tenant.",
     ],
     image: "/images/exterior-aerial-dusk.webp",
     imageAlt:
-      "Aerial view of Alam Business Centre in Kampala showing the full 4,940 m² Phase One building and forecourt",
+      "Aerial view of Alam Business Center in Kampala showing the full 4,940 m² Phase One building and forecourt",
     sections: [
       {
         heading: "The combinations available",
@@ -600,24 +600,24 @@ export const seoPages: SeoPage[] = [
     eyebrow: "Jinja Road corridor",
     intro: [
       "If your business moves goods, the Jinja Road corridor is the road that matters in Kampala. It carries freight east towards Jinja and the border, and it is the route most regional distribution runs on.",
-      "Alam Business Centre sits on Fifth Street in Industrial Area, connected directly to that corridor while staying minutes from the CBD - which means a delivery fleet and a walk-in customer both find you easily.",
+      "Alam Business Center sits on Fifth Street in Industrial Area, connected directly to that corridor while staying minutes from the CBD - which means a delivery fleet and a walk-in customer both find you easily.",
     ],
     image: "/images/exterior-corner-entrance.webp",
     imageAlt:
-      "Commercial property near Jinja Road, Kampala - the corner elevation and controlled vehicle entrance at Alam Business Centre",
+      "Commercial property near Jinja Road, Kampala - the corner elevation and controlled vehicle entrance at Alam Business Center",
     sections: [
       {
         heading: "What the location connects to",
         paragraphs: [
-          "Industrial Area sits between the CBD and the eastern approach to the city, which is why it has stayed Kampala's commercial and distribution district. From Fifth Street you reach the city centre in minutes, the Jinja Road corridor directly, and Port Bell Road for the lakeside industrial belt.",
-          "The Northern Bypass gives goods vehicles a route around the centre, and Entebbe Road connects to the airport via the southern route.",
+          "Industrial Area sits between the CBD and the eastern approach to the city, which is why it has stayed Kampala's commercial and distribution district. From Fifth Street you reach the city center in minutes, the Jinja Road corridor directly, and Port Bell Road for the lakeside industrial belt.",
+          "The Northern Bypass gives goods vehicles a route around the center, and Entebbe Road connects to the airport via the southern route.",
         ],
         bullets: [
           "Direct access to the Jinja Road corridor",
           "Minutes from Kampala CBD",
           "Adjacent to the Nakawa commercial district",
           "Port Bell Road for the lakeside industrial belt",
-          "Northern Bypass for goods vehicles avoiding the centre",
+          "Northern Bypass for goods vehicles avoiding the center",
           "Entebbe Road for airport access",
         ],
       },
@@ -638,9 +638,9 @@ export const seoPages: SeoPage[] = [
     unitSlugs: ["unit-2-625sqm", "unit-4-570sqm", "unit-6-660sqm"],
     faqs: [
       {
-        question: "How far is the site from the city centre?",
+        question: "How far is the site from the city center?",
         answer:
-          "Industrial Area adjoins the CBD, so the centre is a short drive from Fifth Street outside peak traffic.",
+          "Industrial Area adjoins the CBD, so the center is a short drive from Fifth Street outside peak traffic.",
       },
       {
         question: "Can articulated vehicles reach the site?",

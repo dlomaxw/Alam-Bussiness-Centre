@@ -10,8 +10,8 @@ export function whatsappHref(message: string) {
 }
 
 export const GENERAL_WHATSAPP_MESSAGE =
-  "Hello, I am interested in leasing commercial space at Alam Business Centre on Fifth Street. Please share the available units and lease terms.";
+  "Hello, I am interested in leasing commercial space at Alam Business Center on Fifth Street. Please share the available units and lease terms.";
 
 export function unitWhatsappMessage(unitName: string, floorName: string, area: number) {
-  return `Hello, I am interested in ${unitName}, ${floorName}, ${area} m² at Alam Business Centre. Please send me the availability and lease terms.`;
+  return `Hello, I am interested in ${unitName}, ${floorName}, ${area} m² at Alam Business Center. Please send me the availability and lease terms.`;
 }

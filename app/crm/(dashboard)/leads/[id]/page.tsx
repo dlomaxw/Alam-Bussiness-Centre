@@ -92,7 +92,7 @@ export default async function LeadDetailPage({
         </a>
         <a
           href={whatsappHref(
-            `Hello ${lead.full_name.split(" ")[0]}, thank you for your enquiry about space at Alam Business Centre.`,
+            `Hello ${lead.full_name.split(" ")[0]}, thank you for your enquiry about space at Alam Business Center.`,
           ).replace(/wa\.me\/\d+/, `wa.me/${whatsappNumber}`)}
           target="_blank"
           rel="noopener noreferrer"
@@ -101,7 +101,7 @@ export default async function LeadDetailPage({
           WhatsApp
         </a>
         <a
-          href={`mailto:${lead.email}?subject=${encodeURIComponent(`Alam Business Centre — your enquiry ${lead.reference}`)}`}
+          href={`mailto:${lead.email}?subject=${encodeURIComponent(`Alam Business Center — your enquiry ${lead.reference}`)}`}
           className="min-h-10 rounded-full border border-line bg-white px-5 py-2.5 text-sm font-medium text-ink transition-colors hover:border-ink"
         >
           Email

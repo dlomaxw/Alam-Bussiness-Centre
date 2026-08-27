@@ -7,10 +7,10 @@
 
 export const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ??
-  "https://www.alambusinesscentre.com";
+  "https://www.alambusinesscenter.com";
 
 export const property = {
-  name: "Alam Business Centre",
+  name: "Alam Business Center",
   tagline: "Premium Commercial Space on Fifth Street",
   street: "Plot 86-90, Fifth Street, Industrial Area",
   locality: "Central Division",
@@ -20,11 +20,11 @@ export const property = {
   countryName: "Uganda",
   latitude: 0.3163,
   longitude: 32.6062,
-  // PLACEHOLDER - confirm official leasing contact details before launch
-  phone: process.env.NEXT_PUBLIC_LEASING_PHONE ?? "+256700000000",
-  phoneDisplay: process.env.NEXT_PUBLIC_LEASING_PHONE_DISPLAY ?? "+256 700 000 000",
-  whatsapp: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "256700000000",
-  email: process.env.NEXT_PUBLIC_LEASING_EMAIL ?? "leasing@alambusinesscentre.com",
+  // Confirmed leasing contact details.
+  phone: process.env.NEXT_PUBLIC_LEASING_PHONE ?? "+256750421224",
+  phoneDisplay: process.env.NEXT_PUBLIC_LEASING_PHONE_DISPLAY ?? "+256 750 421224",
+  whatsapp: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "256750421224",
+  email: process.env.NEXT_PUBLIC_LEASING_EMAIL ?? "brightthoughtsservices@gmail.com",
   viewingHours: "Monday to Friday, 9:00am to 5:00pm. Saturday, 9:00am to 1:00pm.",
   // Hosted on Drive rather than bundled: the deck is ~43 MB, which would bloat
   // the repository and make the deploy slow to download on a mobile connection.
@@ -135,7 +135,7 @@ export const floors: Record<FloorSlug, FloorInfo> = {
     ],
     image: "/images/unit-1-dealership.webp",
     imageAlt:
-      "Double-height ground-floor showroom at Alam Business Centre fitted as a car and motorcycle dealership behind full-height glazing",
+      "Double-height ground-floor showroom at Alam Business Center fitted as a car and motorcycle dealership behind full-height glazing",
   },
   "first-floor": {
     slug: "first-floor",
@@ -158,7 +158,7 @@ export const floors: Record<FloorSlug, FloorInfo> = {
     ],
     image: "/images/unit-5-furniture.webp",
     imageAlt:
-      "First-floor showroom at Alam Business Centre fitted as a furniture and interior-design display with city views through full-height glazing",
+      "First-floor showroom at Alam Business Center fitted as a furniture and interior-design display with city views through full-height glazing",
   },
   "second-floor": {
     slug: "second-floor",
@@ -177,7 +177,7 @@ export const floors: Record<FloorSlug, FloorInfo> = {
     ],
     image: "/images/concept-restaurant.webp",
     imageAlt:
-      "Second-floor restaurant and bar concept fit-out at Alam Business Centre with panoramic glazing over Kampala",
+      "Second-floor restaurant and bar concept fit-out at Alam Business Center with panoramic glazing over Kampala",
   },
 };
 
@@ -210,7 +210,7 @@ export const units: Unit[] = [
     ],
     image: "/images/unit-1-dealership.webp",
     imageAlt:
-      "Unit 1 at Alam Business Centre fitted as a car and motorcycle dealership with vehicles displayed behind full-height glazing",
+      "Unit 1 at Alam Business Center fitted as a car and motorcycle dealership with vehicles displayed behind full-height glazing",
     priority: 1,
   },
   {
@@ -241,7 +241,7 @@ export const units: Unit[] = [
     ],
     image: "/images/unit-2-electronics.webp",
     imageAlt:
-      "Unit 2 at Alam Business Centre fitted as an electronics and home-appliance showroom with television and appliance displays",
+      "Unit 2 at Alam Business Center fitted as an electronics and home-appliance showroom with television and appliance displays",
     priority: 2,
   },
   {
@@ -272,7 +272,7 @@ export const units: Unit[] = [
     ],
     image: "/images/unit-3-supermarket.webp",
     imageAlt:
-      "Unit 3 at Alam Business Centre fitted as a supermarket with fresh-produce displays, aisles and checkout lanes",
+      "Unit 3 at Alam Business Center fitted as a supermarket with fresh-produce displays, aisles and checkout lanes",
     priority: 3,
   },
   {
@@ -303,7 +303,7 @@ export const units: Unit[] = [
     ],
     image: "/images/unit-4-finishes-showroom.webp",
     imageAlt:
-      "Unit 4 at Alam Business Centre fitted as a building-finishes showroom with window, door and facade displays",
+      "Unit 4 at Alam Business Center fitted as a building-finishes showroom with window, door and facade displays",
     priority: 4,
   },
   {
@@ -334,7 +334,7 @@ export const units: Unit[] = [
     ],
     image: "/images/unit-5-furniture.webp",
     imageAlt:
-      "Unit 5 at Alam Business Centre fitted as a furniture and interior-design showroom with staged living and bedroom sets",
+      "Unit 5 at Alam Business Center fitted as a furniture and interior-design showroom with staged living and bedroom sets",
     priority: 5,
   },
   {
@@ -365,7 +365,7 @@ export const units: Unit[] = [
     ],
     image: "/images/unit-6-appliances.webp",
     imageAlt:
-      "Unit 6 at Alam Business Centre fitted as a home-appliance and kitchen showroom with cookers, refrigeration and laundry displays",
+      "Unit 6 at Alam Business Center fitted as a home-appliance and kitchen showroom with cookers, refrigeration and laundry displays",
     priority: 6,
   },
   {
@@ -396,7 +396,7 @@ export const units: Unit[] = [
     ],
     image: "/images/unit-7-bank.webp",
     imageAlt:
-      "Unit 7 at Alam Business Centre fitted as a bank branch with a teller line, waiting lounge and private meeting rooms",
+      "Unit 7 at Alam Business Center fitted as a bank branch with a teller line, waiting lounge and private meeting rooms",
     priority: 7,
   },
   {
@@ -427,7 +427,7 @@ export const units: Unit[] = [
     ],
     image: "/images/unit-8-offices.webp",
     imageAlt:
-      "Unit 8 at Alam Business Centre fitted as a corporate office with reception, open-plan desking and a glazed boardroom",
+      "Unit 8 at Alam Business Center fitted as a corporate office with reception, open-plan desking and a glazed boardroom",
     priority: 8,
   },
 ];
@@ -449,7 +449,7 @@ export const secondFloorConcepts: SecondFloorConcept[] = [
       "A full-service restaurant and bar with an open kitchen, lounge seating and a counter along the glazed elevation.",
     image: "/images/concept-restaurant.webp",
     imageAlt:
-      "Restaurant and bar concept fit-out on the second floor of Alam Business Centre with an open kitchen and city views",
+      "Restaurant and bar concept fit-out on the second floor of Alam Business Center with an open kitchen and city views",
     categories: ["Hospitality"],
   },
   {
@@ -459,7 +459,7 @@ export const secondFloorConcepts: SecondFloorConcept[] = [
       "Cardio and strength floors against the glazing, with a functional zone, changing rooms and dedicated sauna and steam suites.",
     image: "/images/concept-gym.webp",
     imageAlt:
-      "Gym concept fit-out on the second floor of Alam Business Centre with cardio equipment, free weights and sauna and steam rooms",
+      "Gym concept fit-out on the second floor of Alam Business Center with cardio equipment, free weights and sauna and steam rooms",
     categories: ["Leisure & Wellness"],
   },
   {
@@ -469,7 +469,7 @@ export const secondFloorConcepts: SecondFloorConcept[] = [
       "A reception and relaxation lounge leading to private treatment rooms, a hydrotherapy pool and retail display.",
     image: "/images/concept-spa.webp",
     imageAlt:
-      "Wellness spa concept fit-out on the second floor of Alam Business Centre with treatment suites and a hydrotherapy pool",
+      "Wellness spa concept fit-out on the second floor of Alam Business Center with treatment suites and a hydrotherapy pool",
     categories: ["Leisure & Wellness"],
   },
   {
@@ -479,7 +479,7 @@ export const secondFloorConcepts: SecondFloorConcept[] = [
       "A column-light studio floor with timber flooring, mirrored walls, a members lounge and long views across the city.",
     image: "/images/concept-yoga.webp",
     imageAlt:
-      "Yoga studio concept fit-out on the second floor of Alam Business Centre with timber flooring, mats and panoramic glazing",
+      "Yoga studio concept fit-out on the second floor of Alam Business Center with timber flooring, mats and panoramic glazing",
     categories: ["Leisure & Wellness"],
   },
   {
@@ -489,7 +489,7 @@ export const secondFloorConcepts: SecondFloorConcept[] = [
       "An evening venue with a full bar, booth seating, DJ stage and lighting rig, served by a separate after-hours entrance.",
     image: "/images/concept-nightclub.webp",
     imageAlt:
-      "Nightclub and events lounge concept fit-out on the second floor of Alam Business Centre with a bar, dance floor and lighting rig",
+      "Nightclub and events lounge concept fit-out on the second floor of Alam Business Center with a bar, dance floor and lighting rig",
     categories: ["Hospitality", "Leisure & Wellness"],
   },
   {
@@ -499,17 +499,17 @@ export const secondFloorConcepts: SecondFloorConcept[] = [
       "A headquarters floor with a formal reception, executive suites, open-plan desking and boardroom.",
     image: "/images/unit-8-offices.webp",
     imageAlt:
-      "Corporate office concept fit-out with reception, open-plan desking and a glazed boardroom at Alam Business Centre",
+      "Corporate office concept fit-out with reception, open-plan desking and a glazed boardroom at Alam Business Center",
     categories: ["Offices"],
   },
   {
-    slug: "conference-and-training-centre",
-    name: "Conference or training centre",
+    slug: "conference-and-training-center",
+    name: "Conference or training center",
     summary:
       "Divisible conference halls with breakout lounges, catering support and a dedicated delegate arrival area.",
     image: "/images/interior-showroom-meeting-suite.webp",
     imageAlt:
-      "Conference and training centre concept with glazed meeting suites and breakout space at Alam Business Centre",
+      "Conference and training center concept with glazed meeting suites and breakout space at Alam Business Center",
     categories: ["Offices", "Hospitality"],
   },
 ];

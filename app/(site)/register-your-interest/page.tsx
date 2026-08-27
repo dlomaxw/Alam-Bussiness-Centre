@@ -7,9 +7,9 @@ import { SectionHeading } from "@/components/ui";
 import { buildingStats } from "@/lib/property";
 
 export const metadata: Metadata = {
-  title: "Register Your Interest | Lease Terms for Alam Business Centre, Kampala",
+  title: "Register Your Interest and See Lease Terms",
   description:
-    "Register your interest in showroom, retail, office, hospitality or leisure space at Alam Business Centre, Fifth Street, Kampala, and receive rental rates, availability and lease terms.",
+    "Register your interest in showroom, retail, office, hospitality or leisure space at Alam Business Center, Fifth Street, Kampala, and receive rental rates, availability and lease terms.",
   alternates: { canonical: "/register-your-interest" },
 };
 

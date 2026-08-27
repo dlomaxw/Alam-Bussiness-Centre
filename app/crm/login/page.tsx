@@ -15,7 +15,7 @@ export default async function LoginPage() {
         <div className="flex justify-center">
           <Image
             src="/logo/alam-logo-light.png"
-            alt="Alam Business Centre"
+            alt="Alam Business Center"
             width={215}
             height={90}
             priority

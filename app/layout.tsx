@@ -23,11 +23,11 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     default:
-      "Commercial Showroom & Office Space for Rent in Kampala | Alam Business Centre",
-    template: "%s | Alam Business Centre",
+      "Commercial Showroom & Office Space for Rent in Kampala | Alam Business Center",
+    template: "%s | Alam Business Center",
   },
   description:
-    "Lease premium showroom, retail and office space at Alam Business Centre, Fifth Street, Kampala Industrial Area. Units from 570-660 m² with secure parking and full-height glazed frontage.",
+    "Lease premium showroom, retail and office space at Alam Business Center, Fifth Street, Kampala Industrial Area. Units from 570-660 m² with secure parking and full-height glazed frontage.",
   keywords: [
     "commercial space for rent in Kampala",
     "showroom space for rent in Kampala",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     locale: "en_UG",
     url: SITE_URL,
     title:
-      "Commercial Showroom & Office Space for Rent in Kampala | Alam Business Centre",
+      "Commercial Showroom & Office Space for Rent in Kampala | Alam Business Center",
     description:
       "Premium showroom, retail, office, hospitality and leisure space on Fifth Street, Industrial Area, Kampala. 4,940 m² across eight units.",
     images: [
@@ -50,13 +50,13 @@ export const metadata: Metadata = {
         url: "/images/og-cover.webp",
         width: 1200,
         height: 630,
-        alt: "Alam Business Centre on Fifth Street, Industrial Area, Kampala at dusk",
+        alt: "Alam Business Center on Fifth Street, Industrial Area, Kampala at dusk",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Commercial Space for Rent in Kampala | Alam Business Centre",
+    title: "Commercial Space for Rent in Kampala | Alam Business Center",
     description:
       "Showroom, retail, office and leisure units from 570-660 m² on Fifth Street, Industrial Area, Kampala.",
     images: ["/images/og-cover.webp"],

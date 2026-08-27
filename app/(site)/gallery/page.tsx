@@ -7,34 +7,34 @@ import { SectionHeading } from "@/components/ui";
 import { CONCEPT_DISCLAIMER } from "@/lib/property";
 
 export const metadata: Metadata = {
-  title: "Gallery | 3D Renders of Alam Business Centre, Kampala",
+  title: "Gallery | 3D Renders of the Development",
   description:
-    "Exterior and interior 3D renders of Alam Business Centre on Fifth Street, Kampala - showroom, retail, banking, office, restaurant, gym, spa and events fit-out concepts.",
+    "Exterior and interior 3D renders of Alam Business Center on Fifth Street, Kampala - showroom, retail, banking, office, restaurant, gym, spa and events fit-out concepts.",
   alternates: { canonical: "/gallery" },
 };
 
 const images: GalleryImage[] = [
   {
     src: "/images/exterior-street-dusk.webp",
-    alt: "Alam Business Centre street elevation at dusk with lit interiors and palm trees along Fifth Street",
+    alt: "Alam Business Center street elevation at dusk with lit interiors and palm trees along Fifth Street",
     caption: "Fifth Street elevation at dusk",
     group: "Exterior",
   },
   {
     src: "/images/exterior-aerial-dusk.webp",
-    alt: "Aerial view of Alam Business Centre at dusk showing the full frontage, forecourt and gatehouse",
+    alt: "Aerial view of Alam Business Center at dusk showing the full frontage, forecourt and gatehouse",
     caption: "Aerial view of the frontage",
     group: "Exterior",
   },
   {
     src: "/images/exterior-corner-entrance.webp",
-    alt: "Corner elevation of Alam Business Centre with the controlled vehicle entrance and guardhouse",
+    alt: "Corner elevation of Alam Business Center with the controlled vehicle entrance and guardhouse",
     caption: "Corner elevation and entrance",
     group: "Exterior",
   },
   {
     src: "/images/exterior-frontage-gatehouse.webp",
-    alt: "Long view of the Alam Business Centre frontage with composite cladding and full-height glazing",
+    alt: "Long view of the Alam Business Center frontage with composite cladding and full-height glazing",
     caption: "77.1 metre glazed frontage",
     group: "Exterior",
   },
@@ -58,7 +58,7 @@ const images: GalleryImage[] = [
   },
   {
     src: "/images/interior-facade-display.webp",
-    alt: "Facade and glazing display within a showroom unit at Alam Business Centre",
+    alt: "Facade and glazing display within a showroom unit at Alam Business Center",
     caption: "Display bays against the facade",
     group: "Common areas",
   },

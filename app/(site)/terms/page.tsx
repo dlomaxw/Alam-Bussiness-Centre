@@ -5,9 +5,9 @@ import { SectionHeading } from "@/components/ui";
 import { property } from "@/lib/property";
 
 export const metadata: Metadata = {
-  title: "Terms and Conditions | Alam Business Centre",
+  title: "Terms and Conditions",
   description:
-    "Terms governing the use of the Alam Business Centre website, the status of published areas, renders and rental rates, and the basis on which enquiries are handled.",
+    "Terms governing the use of the Alam Business Center website, the status of published areas, renders and rental rates, and the basis on which enquiries are handled.",
   alternates: { canonical: "/terms" },
 };
 

@@ -1,4 +1,4 @@
-# Alam Business Centre — leasing website
+# Alam Business Center — leasing website
 
 Marketing and lead-capture site for the commercial space at **Plot 86–90, Fifth Street,
 Industrial Area, Central Division, Kampala**.
@@ -51,7 +51,7 @@ To change the rate, edit `LEASE_RATE_USD_PER_SQM_MONTH` — nothing else needs t
 
 ## Lead database (Cloudflare D1)
 
-Database `alam-business-centre-crm`, reached over the Cloudflare REST API rather than a
+Database `alam-business-center-crm`, reached over the Cloudflare REST API rather than a
 Workers binding, so the same build deploys to Vercel, Node or Cloudflare.
 
 | Table | Holds |
@@ -68,7 +68,7 @@ Schema lives in `db/schema.sql` and `db/002-crm.sql`. Day to day you read this t
 but to query it directly:
 
 ```bash
-npx wrangler d1 execute alam-business-centre-crm --remote --command "SELECT reference, created_at, full_name, company, email, phone, source, status FROM leads ORDER BY created_at DESC LIMIT 20"
+npx wrangler d1 execute alam-business-center-crm --remote --command "SELECT reference, created_at, full_name, company, email, phone, source, status FROM leads ORDER BY created_at DESC LIMIT 20"
 ```
 
 Protections on the endpoint: shared validation, a honeypot field, a fixed-window rate limit
@@ -157,7 +157,7 @@ with `NEXT_PUBLIC_PRESENTATION_URL` — point that at a new link if the deck is 
 and the logo variants by `scripts/prepare-logo.mjs` (transparent background, plus a white
 knockout of the wordmark for the black header). Re-run either if the source assets change.
 
-Source assets: `../alam group Bussiness centre/`. Note that `9.png` and `10.png` were not on
+Source assets: `../alam group Bussiness center/`. Note that `9.png` and `10.png` were not on
 disk when the images were converted, so exteriors come from 7, 8, 11 and 12.
 
 ## Analytics
@@ -220,9 +220,9 @@ Two notes for production:
 
 The site runs on placeholders for these. Search `lib/property.ts` for `PLACEHOLDER`.
 
-- [ ] **Leasing phone number** — currently `+256 700 000 000`
-- [ ] **WhatsApp number** — currently `256700000000`
-- [ ] **Leasing email** — currently `leasing@alambusinesscentre.com`
+- [x] **Leasing phone number** — `+256 750 421224`
+- [x] **WhatsApp number** — `256750421224`
+- [x] **Leasing email** — `brightthoughtsservices@gmail.com`
 - [ ] **Domain** — `NEXT_PUBLIC_SITE_URL` drives canonicals, sitemap and Open Graph
 - [ ] **Map coordinates** — `latitude`/`longitude` are approximate for Industrial Area;
       the embed searches by address, so a wrong pin is possible until these are set
@@ -236,12 +236,11 @@ The site runs on placeholders for these. Search `lib/property.ts` for `PLACEHOLD
 - [ ] **Set `CRM_SESSION_SECRET`** in the production environment — it is generated per install
       and is already in your local `.env.local`
 
-### One naming decision outstanding
+### Spelling
 
-The supplied logo reads **"Alam BUSINESS CENTER"** (American spelling). All site copy, page
-titles and meta descriptions use **"Alam Business Centre"** (British), per the brief. Confirm
-which spelling is correct and the other gets aligned — it is a single find-and-replace, but
-having the logo and the H1 disagree is the kind of thing a tenant notices.
+The brand is **"Alam Business Center"** (American spelling), matching the registered logo.
+Site copy, page titles, meta descriptions and structured data all use it, and generic uses
+such as "city center" follow the same convention so the writing stays consistent.
 
 ## Not built yet
 

@@ -10,9 +10,9 @@ import { buildingStats } from "@/lib/property";
 import { resolvedUnits } from "@/lib/server/units";
 
 export const metadata: Metadata = {
-  title: "Available Commercial Units for Rent | 570-660 m² Showroom & Office Space",
+  title: "Available Units, 570-660 m², for Rent in Kampala",
   description:
-    "Compare all eight available units at Alam Business Centre, Fifth Street, Kampala. Showroom, retail, banking and office space from 570 to 660 m², individually or combined.",
+    "Compare all eight available units at Alam Business Center, Fifth Street, Kampala. Showroom, retail, banking and office space from 570 to 660 m², individually or combined.",
   alternates: { canonical: "/available-spaces" },
 };
 

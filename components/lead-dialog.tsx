@@ -175,7 +175,7 @@ function Dialog({ options, onClose }: { options: OpenOptions; onClose: () => voi
         </button>
 
         <p className="text-[0.7rem] font-semibold tracking-[0.22em] text-red uppercase">
-          Alam Business Centre
+          Alam Business Center
         </p>
         <h2
           id="lead-dialog-title"

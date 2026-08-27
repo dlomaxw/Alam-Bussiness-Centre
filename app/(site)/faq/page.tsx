@@ -7,9 +7,9 @@ import { JsonLd, faqSchema } from "@/lib/schema";
 import { property } from "@/lib/property";
 
 export const metadata: Metadata = {
-  title: "Frequently Asked Questions | Leasing at Alam Business Centre",
+  title: "Frequently Asked Questions About Leasing",
   description:
-    "Answers on unit sizes, rental rates, lease duration, parking, service charge, fit-out, handover and site visits at Alam Business Centre, Fifth Street, Kampala.",
+    "Answers on unit sizes, rental rates, lease duration, parking, service charge, fit-out, handover and site visits at Alam Business Center, Fifth Street, Kampala.",
   alternates: { canonical: "/faq" },
 };
 
@@ -18,7 +18,7 @@ const groups = [
     title: "The building",
     faqs: [
       {
-        question: "Where is Alam Business Centre?",
+        question: "Where is Alam Business Center?",
         answer:
           "Plot 86-90, Fifth Street, Industrial Area, Central Division, Kampala. The site is in Kampala's established commercial district, minutes from the CBD and connected to the Jinja Road corridor.",
       },

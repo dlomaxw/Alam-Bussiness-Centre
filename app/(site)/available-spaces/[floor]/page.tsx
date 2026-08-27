@@ -26,17 +26,17 @@ const seo: Record<string, { title: string; description: string }> = {
   "ground-floor": {
     title: "Ground Floor Showroom Space for Rent | 2,390 m², Fifth Street Kampala",
     description:
-      "Four ground-floor showroom units of 570-625 m² at Alam Business Centre, with level vehicle access, 6 m headroom, terrazzo floors and parking at the door on Fifth Street, Kampala.",
+      "Four ground-floor showroom units of 570-625 m² at Alam Business Center, with level vehicle access, 6 m headroom, terrazzo floors and parking at the door on Fifth Street, Kampala.",
   },
   "first-floor": {
     title: "First Floor Showroom & Office Space for Rent | 2,550 m² in Kampala",
     description:
-      "Four first-floor units of 615-660 m² at Alam Business Centre, served by two service lifts, with full-height glazing, flexible partitioning and combinable floor plates.",
+      "Four first-floor units of 615-660 m² at Alam Business Center, served by two service lifts, with full-height glazing, flexible partitioning and combinable floor plates.",
   },
   "second-floor": {
     title: "Second Floor Leisure, Hospitality & Office Space in Kampala",
     description:
-      "Restaurant, gym, spa, studio, nightclub and headquarters opportunities on the second floor of Alam Business Centre. Areas available on application and configured to the operator.",
+      "Restaurant, gym, spa, studio, nightclub and headquarters opportunities on the second floor of Alam Business Center. Areas available on application and configured to the operator.",
   },
 };
 

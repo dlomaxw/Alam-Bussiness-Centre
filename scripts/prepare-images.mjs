@@ -2,7 +2,7 @@ import sharp from "sharp";
 import { mkdir } from "node:fs/promises";
 import path from "node:path";
 
-const SRC = "C:/Users/RAZER/Documents/casement/alam group Bussiness centre";
+const SRC = "C:/Users/RAZER/Documents/casement/alam group Bussiness center";
 const OUT = path.join(process.cwd(), "public", "images");
 
 const map = {

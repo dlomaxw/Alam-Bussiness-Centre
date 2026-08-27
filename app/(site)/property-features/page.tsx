@@ -7,9 +7,9 @@ import { SectionHeading } from "@/components/ui";
 import { buildingSpecs, floors } from "@/lib/property";
 
 export const metadata: Metadata = {
-  title: "Property Specifications | Alam Business Centre, Fifth Street Kampala",
+  title: "Property Specifications, Fifth Street Kampala",
   description:
-    "Full specifications for Alam Business Centre: 4,940 m² lettable area, 6 m floor-to-floor height, 77.1 m frontage, 31 parking bays, two service lifts, terrazzo and porcelain finishes.",
+    "Full specifications for Alam Business Center: 4,940 m² lettable area, 6 m floor-to-floor height, 77.1 m frontage, 31 parking bays, two service lifts, terrazzo and porcelain finishes.",
   alternates: { canonical: "/property-features" },
 };
 
@@ -98,7 +98,7 @@ export default function PropertyFeaturesPage() {
               <div className="relative aspect-3/2 overflow-hidden rounded-2xl">
                 <Image
                   src="/images/exterior-aerial-dusk.webp"
-                  alt="Aerial view of Alam Business Centre showing the roof, frontage, forecourt parking and gatehouse"
+                  alt="Aerial view of Alam Business Center showing the roof, frontage, forecourt parking and gatehouse"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover"
@@ -107,7 +107,7 @@ export default function PropertyFeaturesPage() {
               <div className="relative aspect-3/2 overflow-hidden rounded-2xl">
                 <Image
                   src="/images/interior-showroom-corridor.webp"
-                  alt="Internal showroom corridor at Alam Business Centre with terrazzo floors and full-height glazing"
+                  alt="Internal showroom corridor at Alam Business Center with terrazzo floors and full-height glazing"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover"

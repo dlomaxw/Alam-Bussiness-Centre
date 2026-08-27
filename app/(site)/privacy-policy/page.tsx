@@ -5,9 +5,9 @@ import { SectionHeading } from "@/components/ui";
 import { property } from "@/lib/property";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Alam Business Centre",
+  title: "Privacy Policy",
   description:
-    "How Alam Business Centre collects, uses, stores and protects the personal information submitted through leasing enquiries and site-visit requests.",
+    "How Alam Business Center collects, uses, stores and protects the personal information submitted through leasing enquiries and site-visit requests.",
   alternates: { canonical: "/privacy-policy" },
   robots: { index: true, follow: true },
 };
@@ -38,7 +38,7 @@ const sections = [
   {
     title: "Who can see your details",
     body: [
-      "Your enquiry is visible to the Alam Business Centre leasing team and the administrators who maintain this website. We do not sell your details and we do not share them with third parties for their own marketing.",
+      "Your enquiry is visible to the Alam Business Center leasing team and the administrators who maintain this website. We do not sell your details and we do not share them with third parties for their own marketing.",
       "Enquiries are stored in a Cloudflare D1 database. Cloudflare processes this data on our behalf as our hosting provider. Where you contact us through WhatsApp, that conversation is also subject to WhatsApp's own privacy terms.",
     ],
   },

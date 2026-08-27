@@ -45,7 +45,7 @@ const audiences = [
 
 const homeFaqs = [
   {
-    question: "Where exactly is Alam Business Centre?",
+    question: "Where exactly is Alam Business Center?",
     answer:
       "Plot 86-90, Fifth Street, Industrial Area, Central Division, Kampala. It sits inside Kampala's established Industrial Area with quick access to the CBD and the Jinja Road corridor.",
   },
@@ -82,7 +82,7 @@ export default async function HomePage() {
       <section className="relative isolate overflow-hidden bg-ink text-white">
         <Image
           src="/images/exterior-street-dusk.webp"
-          alt="Alam Business Centre on Fifth Street, Industrial Area, Kampala, lit at dusk behind palm trees and street parking"
+          alt="Alam Business Center on Fifth Street, Industrial Area, Kampala, lit at dusk behind palm trees and street parking"
           fill
           priority
           sizes="100vw"
@@ -141,7 +141,7 @@ export default async function HomePage() {
               <SectionHeading
                 eyebrow="The development"
                 title="A premium commercial destination in Industrial Area"
-                intro="Alam Business Centre puts showroom-grade frontage, corporate floors and leisure space behind a single 77.1-metre glazed elevation, with controlled access, on-plot parking and service lifts throughout."
+                intro="Alam Business Center puts showroom-grade frontage, corporate floors and leisure space behind a single 77.1-metre glazed elevation, with controlled access, on-plot parking and service lifts throughout."
               />
               <ul className="mt-8 grid gap-x-6 gap-y-3 sm:grid-cols-2">
                 {introPoints.map((point) => (
@@ -165,7 +165,7 @@ export default async function HomePage() {
               <div className="relative aspect-4/3 overflow-hidden rounded-2xl">
                 <Image
                   src="/images/atrium-reception.webp"
-                  alt="Double-height reception atrium at Alam Business Centre with a timber feature wall and terrazzo floors"
+                  alt="Double-height reception atrium at Alam Business Center with a timber feature wall and terrazzo floors"
                   fill
                   sizes="(max-width: 1024px) 100vw, 45vw"
                   className="object-cover"
@@ -175,7 +175,7 @@ export default async function HomePage() {
                 <div className="relative aspect-square overflow-hidden rounded-2xl">
                   <Image
                     src="/images/exterior-corner-entrance.webp"
-                    alt="Corner elevation and controlled vehicle entrance at Alam Business Centre"
+                    alt="Corner elevation and controlled vehicle entrance at Alam Business Center"
                     fill
                     sizes="25vw"
                     className="object-cover"
@@ -184,7 +184,7 @@ export default async function HomePage() {
                 <div className="relative aspect-square overflow-hidden rounded-2xl">
                   <Image
                     src="/images/exterior-aerial-dusk.webp"
-                    alt="Aerial view of Alam Business Centre showing the full Fifth Street frontage and on-plot parking"
+                    alt="Aerial view of Alam Business Center showing the full Fifth Street frontage and on-plot parking"
                     fill
                     sizes="25vw"
                     className="object-cover"
@@ -334,7 +334,7 @@ export default async function HomePage() {
             <div className="relative aspect-4/3 overflow-hidden rounded-2xl">
               <Image
                 src="/images/exterior-frontage-gatehouse.webp"
-                alt="Street view of the Alam Business Centre frontage, gatehouse and controlled entrance on Fifth Street"
+                alt="Street view of the Alam Business Center frontage, gatehouse and controlled entrance on Fifth Street"
                 fill
                 sizes="(max-width: 1024px) 100vw, 45vw"
                 className="object-cover"
